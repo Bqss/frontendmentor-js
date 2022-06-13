@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+main, header, footer {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  color: hsl(240deg, 6%, 50%);
+  margin-top: 17px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: hsl(238deg, 29%, 16%);
+}
+
+h3 {
+  color: hsl(240deg, 6%, 50%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  background: linear-gradient(to bottom, hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
+  font-family: "Kumbh Sans", sans-serif;
+}
+body .container {
+  width: min(920px, 90%);
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 2rem;
+  position: relative;
+  align-items: center;
+}
+body .container > * {
+  padding: 5.9em 0 7em 0;
+}
+body .container > img {
+  position: absolute;
+  top: 25%;
+  left: -93px;
+  z-index: 2;
+  transition: .4s;
+}
+body .container > img.Hover {
+  left: -133px;
+}
+@media (max-width: 1147px) {
+  body .container > img {
+    top: 23%;
+  }
+}
+body .container .images {
+  z-index: 1;
+  flex: 1 1 475px;
+  position: relative;
+  background: url("../images/bg-pattern-desktop.svg");
+  background-position: 119% 68%;
+  background-repeat: no-repeat;
+  background-size: 200%;
+  overflow: hidden;
+}
+body .container .images .image-one img {
+  position: relative;
+  left: -18%;
+  top: -5px;
+  height: 100%;
+}
+body .container .faqs {
+  flex: 1 1 445px;
+  gap: 30px;
+  padding-right: 8em;
+}
+body .container .faqs .faqs-wrapper .faq {
+  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+  padding: 18px 0;
+}
+body .container .faqs .faqs-wrapper .faq .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container .faqs .faqs-wrapper .faq .top img {
+  transition: 0.2s;
+}
+body .container .faqs .faqs-wrapper .faq .top:hover {
+  cursor: pointer;
+}
+body .container .faqs .faqs-wrapper .faq .top:hover h3 {
+  color: hsl(14deg, 88%, 65%);
+}
+body .container .faqs .faqs-wrapper .faq .top.Active img {
+  transform: rotate(180deg);
+}
+body .container .faqs .faqs-wrapper .faq .top.Active ~ * {
+  display: block;
+}
+body .container .faqs .faqs-wrapper .faq .top.Active h3 {
+  color: hsl(238deg, 29%, 16%);
+}
+body .container .faqs .faqs-wrapper .faq .desc {
+  display: none;
+}
+@media (max-width: 768px) {
+  body .container {
+    margin: 85px auto;
+    margin-top: 147px;
+    flex-direction: column;
+  }
+  body .container > img {
+    display: none;
+  }
+  body .container h1 {
+    text-align: center;
+  }
+  body .container > * {
+    flex: auto;
+  }
+  body .container .images {
+    position: unset;
+    flex: 1 1 50%;
+    width: 100%;
+    overflow: unset;
+    background: unset;
+    background: url("../images/bg-pattern-mobile.svg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  body .container .images .image-one img {
+    content: url("../images/illustration-woman-online-mobile.svg");
+    position: relative;
+    top: -100px;
+    left: 15%;
+    width: 70%;
+    height: auto;
+    z-index: 2;
+  }
+  body .container .faqs {
+    margin-top: -80px;
+    padding: 25px;
+    flex: 1 1 50%;
+    width: 100%;
+    padding: 25px;
+    padding-bottom: 50px;
+  }
+  body .container .faqs > div {
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,45 @@
+
+$Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+$Softred: hsl(14, 88%, 65%);
+$Softviolet: hsl(273, 75%, 66%);
+$Softblue: hsl(240, 73%, 65%);
+$Verydarkgrayishblue: hsl(237, 12%, 33%);
+$Darkgrayishblue: hsl(240, 6%, 50%);
+$Lightgrayishblue: hsl(240, 5%, 91%);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+.flex{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+
+}
+main,header,footer{
+    width: 100%;
+}
+img{
+    max-width: 100%;
+}
+
+p{
+    color: $Darkgrayishblue;
+    margin-top: 17px;
+}
+h1{
+    font-size: 2rem;
+    color: $Verydarkdesaturatedblue;
+}
+h3{
+    color: $Darkgrayishblue;
+   
+}

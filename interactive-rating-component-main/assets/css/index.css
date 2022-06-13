@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Overpass',sans-serif;
+}
+
+p {
+  opacity: 0.5;
+}
+
+body {
+  background-color: #121417;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: clamp(9px, 3vw, 15px);
+  }
+}
+
+body main .container {
+  max-width: 410px;
+  background-color: #1f2630;
+  border-radius: 1.5rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 655px) {
+  body main .container {
+    width: 83vw;
+  }
+}
+
+body main .container .interactive-rating {
+  padding: 2.13em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.13em;
+}
+
+body main .container .interactive-rating .star {
+  width: 3.33em;
+  height: 3.33em;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #252d37;
+}
+
+body main .container .interactive-rating .heading {
+  color: white;
+}
+
+body main .container .interactive-rating .heading h1 {
+  margin-bottom: 1.33em;
+  font-size: 1.7em;
+}
+
+@media (max-width: 376px) {
+  body main .container .interactive-rating .heading h1 {
+    margin-bottom: 1em;
+  }
+}
+
+body main .container .interactive-rating .heading p {
+  line-height: 1.5;
+}
+
+body main .container .interactive-rating .btn button {
+  color: white;
+  width: 100%;
+  text-transform: uppercase;
+  border-radius: 2em;
+  height: clamp(2em, calc(2em + 3vw), 3.2em);
+  background-color: #fb7413;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+body main .container .interactive-rating .btn button:hover {
+  background-color: white;
+  color: orange;
+}
+
+body main .container .option-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+body main .container .option-wrapper .number {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.125em;
+  height: 3.125em;
+  background-color: #252d37;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: .5s;
+}
+
+body main .container .option-wrapper .number:hover {
+  background-color: #fb7413;
+}
+
+body main .container .option-wrapper .number:hover p {
+  opacity: 1;
+}
+
+body main .container .option-wrapper .number.selected {
+  background-color: #7c8798;
+}
+
+body main .container .option-wrapper .number.selected p {
+  opacity: 1;
+}
+
+body main .container .feedback {
+  transition: .5s;
+  padding: 4em 1.33em;
+  display: none;
+  font-size: 1.04859em;
+  opacity: 0;
+  flex-direction: column;
+  gap: 1.28em;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+body main .container .feedback.show {
+  display: flex;
+  opacity: 1;
+}
+
+body main .container .feedback .rating {
+  padding: 7px 18px;
+  background-color: #252d37;
+  color: #fb7413;
+  border-radius: 1rem;
+}
+
+body main .container .feedback .rating p {
+  opacity: 1;
+}
+
+body main .container .feedback .desc h1 {
+  margin-bottom: 1.3em;
+}
+
+body main .container .feedback .desc p {
+  line-height: 1.5;
+  font-size: 1em;
+}

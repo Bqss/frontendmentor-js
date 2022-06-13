@@ -1,0 +1,157 @@
+@use 'general' as g;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    background : linear-gradient(to bottom , hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    font-family: 'Kumbh Sans',sans-serif;
+    .container{
+        width: min(920px,90%);
+        background-color: white;
+        margin: 0 auto;
+        border-radius: 2rem;
+        position: relative;
+        align-items: center;
+
+       
+        & > *{
+            padding:5.9em 0 7em  0;
+        }
+        & > img{
+               
+                position: absolute;
+                top: 25%;
+                left: -93px;
+                z-index: 2;
+
+                &.Hover{
+                    left:calc(-93px - 40px);
+                }
+                 
+                @media(max-width: 1147px){
+                    top: 23%;
+                }  
+        }
+        .images{
+            z-index: 1;
+            flex: 1 1 calc(920px - 445px);
+            position: relative; 
+            background: url("../images/bg-pattern-desktop.svg");
+            background-position: 119% 68%;
+            background-repeat: no-repeat;
+            background-size: 200%;
+            overflow: hidden;
+
+            .image-one {
+            
+                img{
+                    position: relative;
+                    left: -18%;
+                    top: -5px;
+                    height: 100%;
+               
+                }
+            }
+ 
+        }
+        .faqs{
+            flex: 1 1 445px;
+            gap: 30px;
+            padding-right: 8em;
+            .faqs-wrapper{
+           
+                .faq{
+                    border-bottom: 1px solid g.$Lightgrayishblue  ;
+                    padding: 18px 0;
+                    .top{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        img{
+                            transition: .2s;
+                        }
+                        &:hover{
+                            
+                            cursor: pointer;
+                            h3{
+                                color: g.$Softred;
+                            }
+                        }
+                        &.Active{
+                            img{
+                                transform: rotate(180deg);
+                            }
+                            & ~  *{
+                                display: block;
+                            }
+                            h3{
+                                color: g.$Verydarkdesaturatedblue;
+                            }
+                        }
+                    }
+                    .desc {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        @media(max-width : 768px){
+            margin: 85px auto;
+            margin-top: 147px;
+            flex-direction: column;
+            & > img{
+                display: none;
+            }
+            h1{
+                text-align: center;
+            }
+            & > *{
+                
+                flex: auto;
+            }
+            .images{
+                position: unset;
+                flex: 1 1 50%;
+                width: 100%;
+                overflow: unset;
+                background: unset;
+                background: url("../images/bg-pattern-mobile.svg");
+                background-position: center top;
+                background-repeat: no-repeat;
+
+                padding: 0;
+                .image-one {
+                   
+                    img{
+                        content: url("../images/illustration-woman-online-mobile.svg");
+                        position: relative;
+                        top: -100px;
+                        left: 15%;
+                        width: 70%;
+                        height: auto;
+                        z-index: 2;
+                    }
+                }
+
+            }
+            .faqs{
+                margin-top: -80px;
+                padding: 25px;
+                flex: 1 1 50%;
+                width: 100%;
+                padding: 25px;
+                padding-bottom: 50px;
+
+                & > div{
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+

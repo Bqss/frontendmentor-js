@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass',sans-serif;
+}
+
+$Orange: hsl(25, 97%, 53%);
+$White: hsl(0, 0%, 100%);
+$LightGrey: hsl(217, 12%, 63%);
+$MediumGrey: hsl(216, 12%, 54%);
+$DarkBlue: hsl(213, 19%, 18%);
+$VeryDarkBlue: hsl(216, 12%, 8%);
+
+p{
+    opacity: 0.5;
+}
+
+body{
+    background-color: $VeryDarkBlue;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+
+    @media(max-width: 600px){
+        font-size: clamp(9px , 3vw ,15px);
+    }
+
+    main{
+        .container{
+            max-width: 410px;
+            background-color: #1f2630;
+            border-radius: 1.5rem;
+            margin: 0 auto;
+
+            @media(max-width:655px){
+                width: 83vw;
+ 
+            }
+            .interactive-rating{
+                padding: 2.13em;
+                display: flex;
+                flex-direction: column;
+                gap: 2.13em;
+
+                .star{
+                    width: 3.33em;
+                    height: 3.33em;
+                    display: flex;
+                    border-radius: 50%;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    background-color: $DarkBlue;
+                }
+                .heading{
+                    color: white;
+                    
+                    h1{
+                        margin-bottom: 1.33em;
+                        font-size: 1.7em;
+                        @media(max-width : 376px){
+                            margin-bottom: 1em;
+                        }
+                    }
+
+                   
+                    p{
+                        line-height: 1.5;
+                    }
+                    
+                }
+                .btn{
+                    button{
+                        color: white;
+                        width: 100%;
+                        text-transform: uppercase;
+                        border-radius: 2em;
+                        height: clamp(2em, calc(2em + 3vw) , 3.2em);
+                        background-color: $Orange;
+                        transition: 0.3s;
+                        border: none;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: white;
+                            color: orange;
+                        }
+                    }
+                }
+            }
+            .option-wrapper{
+                display: flex;
+                justify-content: space-between;
+
+                
+                .number{
+
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 3.125em;
+                    height: 3.125em;
+                    background-color: $DarkBlue;
+                    border-radius: 50%;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                    transition: .5s;
+
+                    
+                    &:hover{
+                        background-color: $Orange;
+                        p{
+                            opacity: 1;
+                        }
+                    }
+
+                    &.selected{
+                        background-color: $MediumGrey;
+                        p{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+
+                
+            }
+
+            .feedback{
+             
+                &.show{
+                    display: flex;
+                    opacity: 1;
+
+                }
+                transition: .5s;
+                padding: 4em 1.33em;
+                display: none;
+                font-size: 1.04859em;
+                opacity: 0;
+                flex-direction: column;
+                gap: 1.28em;
+                align-items: center;
+                text-align: center;
+                color: white;
+
+                .rating{
+                    padding: 7px 18px;
+                    background-color: $DarkBlue;
+                    color: $Orange;
+                    border-radius: 1rem;
+                    p{
+                        opacity: 1;
+                    }
+                }
+                .desc{
+                    h1{
+                        margin-bottom: 1.3em;
+                    }
+                    p{
+                        line-height: 1.5;
+                        font-size: 1em;
+                    }
+                }
+
+            }
+        }
+    }
+}
