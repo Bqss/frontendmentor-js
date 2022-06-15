@@ -30,13 +30,13 @@ h1 {
 
 main .container {
   display: flex;
-  max-width: 1440px;
   height: 100%;
   min-height: 100vh;
 }
 main .container .card_desc {
-  flex: 1 1 55%;
-  padding: 4em min(10.3em, 5vw);
+  flex: 1 1 58%;
+  padding: 4em 10.625em;
+  padding-right: 13.75em;
 }
 main .container .card_desc h1 {
   font-weight: 300;
@@ -52,10 +52,10 @@ main .container .card_desc .background-mobile {
   display: none;
 }
 main .container .card_desc .logo {
-  margin-bottom: 8.75em;
+  margin-bottom: 8.8em;
 }
 main .container .card_desc p {
-  font-size: 1.15em;
+  font-size: 1.25em;
   line-height: 1.6em;
   font-weight: 400;
   color: hsl(0deg, 36%, 70%);
@@ -108,7 +108,7 @@ main .container .card_desc form .warning {
   color: red;
 }
 main .container .card_image {
-  flex: 1 1 45%;
+  flex: 1 1 42%;
   background: url("../assets/images/hero-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
