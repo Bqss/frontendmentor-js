@@ -1,0 +1,140 @@
+@use "general" as g;
+main{
+    
+    .container{
+        display: flex;
+        max-width: 1440px;
+        height: 100%;
+        min-height: 100vh;
+        
+        .card_desc{
+            flex: 1 1 55%;
+            padding: 4em min(10.3em,5vw) ;
+            h1{
+                font-weight: 300;
+                text-transform: uppercase;
+                color: g.$DesaturatedRed;
+                margin-bottom: .3em;
+                span{
+                    font-weight: 600;
+                    color: black;
+                }  
+            }
+            .background-mobile{
+                display: none;
+            }
+            .logo{
+                margin-bottom: 8.75em;
+            }
+            p{
+                font-size: 1.15em;
+                line-height: 1.6em;
+                font-weight: 400;
+                color: g.$DesaturatedRed;
+            }
+            form{
+                margin-top: 3.125em;
+                width: min(445px,100%);
+                *.hide{
+                    display: none;
+                }
+                
+                .input{
+                    position: relative;
+                    
+                    input{
+                        
+                        width: 100%;
+                        padding: 20px 32px;
+                        border-radius: 2rem;
+                        border: none;
+                        outline: 1px solid g.$DesaturatedRed;
+    
+                        &::placeholder{
+                            color: g.$DesaturatedRed;
+                        }
+                    }
+                    button {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        border-radius: 2rem;
+                        width: 20%;
+                        height: 100%;
+                        box-shadow: 0px 8px 1rem hsla(0, 74%, 74%, 0.494);
+                        border:none;
+                        background : linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%)) ;
+                        
+                        &:hover{
+                            cursor: pointer;
+                            background: lighten( hsl(0, 80%, 86%), 2%);
+                        }
+                    }
+                    
+                    .error{
+                        position: absolute;
+                        right: 25%;
+                        top: 25%;
+                        
+                    }
+                    
+                }
+
+                .warning{
+                    font-size: 1em;
+                    margin-left: 32px;
+                    text-align: left;
+                    margin-top: 8px;
+                    color: red;
+                }
+            }
+        }
+        .card_image{
+            flex: 1 1 45%;
+            background: url("../assets/images/hero-desktop.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media(max-width:768px){
+            flex-direction: column;
+            .card_desc{
+                padding: 30px 35px;
+                h1,p{
+                    text-align: center;
+                }
+                .background-mobile{
+                    display: block;
+                    background: url("../assets/images/hero-mobile.jpg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 250px;
+                    background-position: center;
+                    width: calc(100% + 70px );
+                    position: relative;
+                    left: -35px;
+                    margin-bottom: 65px;
+                    
+                }
+                .logo{
+                    margin-bottom: 30px;
+                    width: 100px;
+                    
+                }
+                p{
+                    font-size: 1.355em;
+                }
+                form {
+                    width: 100%;
+                    button{
+                        width: 24%;
+                    }
+                }
+            }
+            .card_image{
+                display: none;
+            }
+        }
+        
+    }
+}

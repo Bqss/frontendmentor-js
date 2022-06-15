@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: url("../assets/images/bg-pattern-desktop.svg"), linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+}
+@media (max-width: 620px) {
+  body {
+    font-size: clamp(8px, 3px + 2vw, 16px);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 4em;
+  letter-spacing: 0.4em;
+  line-height: 1.2em;
+}
+
+main .container {
+  display: flex;
+  max-width: 1440px;
+  height: 100%;
+  min-height: 100vh;
+}
+main .container .card_desc {
+  flex: 1 1 55%;
+  padding: 4em min(10.3em, 5vw);
+}
+main .container .card_desc h1 {
+  font-weight: 300;
+  text-transform: uppercase;
+  color: hsl(0deg, 36%, 70%);
+  margin-bottom: 0.3em;
+}
+main .container .card_desc h1 span {
+  font-weight: 600;
+  color: black;
+}
+main .container .card_desc .background-mobile {
+  display: none;
+}
+main .container .card_desc .logo {
+  margin-bottom: 8.75em;
+}
+main .container .card_desc p {
+  font-size: 1.15em;
+  line-height: 1.6em;
+  font-weight: 400;
+  color: hsl(0deg, 36%, 70%);
+}
+main .container .card_desc form {
+  margin-top: 3.125em;
+  width: min(445px, 100%);
+}
+main .container .card_desc form *.hide {
+  display: none;
+}
+main .container .card_desc form .input {
+  position: relative;
+}
+main .container .card_desc form .input input {
+  width: 100%;
+  padding: 20px 32px;
+  border-radius: 2rem;
+  border: none;
+  outline: 1px solid hsl(0deg, 36%, 70%);
+}
+main .container .card_desc form .input input::placeholder {
+  color: hsl(0deg, 36%, 70%);
+}
+main .container .card_desc form .input button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 2rem;
+  width: 20%;
+  height: 100%;
+  box-shadow: 0px 8px 1rem hsla(0deg, 74%, 74%, 0.494);
+  border: none;
+  background: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
+}
+main .container .card_desc form .input button:hover {
+  cursor: pointer;
+  background: #f9c8c8;
+}
+main .container .card_desc form .input .error {
+  position: absolute;
+  right: 25%;
+  top: 25%;
+}
+main .container .card_desc form .warning {
+  font-size: 1em;
+  margin-left: 32px;
+  text-align: left;
+  margin-top: 8px;
+  color: red;
+}
+main .container .card_image {
+  flex: 1 1 45%;
+  background: url("../assets/images/hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  main .container {
+    flex-direction: column;
+  }
+  main .container .card_desc {
+    padding: 30px 35px;
+  }
+  main .container .card_desc h1, main .container .card_desc p {
+    text-align: center;
+  }
+  main .container .card_desc .background-mobile {
+    display: block;
+    background: url("../assets/images/hero-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    background-position: center;
+    width: calc(100% + 70px);
+    position: relative;
+    left: -35px;
+    margin-bottom: 65px;
+  }
+  main .container .card_desc .logo {
+    margin-bottom: 30px;
+    width: 100px;
+  }
+  main .container .card_desc p {
+    font-size: 1.355em;
+  }
+  main .container .card_desc form {
+    width: 100%;
+  }
+  main .container .card_desc form button {
+    width: 24%;
+  }
+  main .container .card_image {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

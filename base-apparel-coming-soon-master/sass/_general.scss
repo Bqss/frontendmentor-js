@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+// ### Primary
+
+$DesaturatedRed: hsl(0, 36%, 70%);
+$SoftRed: hsl(0, 93%, 68%);
+
+// ### Neutral
+
+$DarkGrayishRed: hsl(0, 6%, 24%);
+
+// ### Gradients
+
+// $Linear(135deg,  hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+// $Linear(135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: url("../assets/images/bg-pattern-desktop.svg"),linear-gradient(135deg,  hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    @media(max-width: 620px){
+        font-size: clamp(8px , calc(3px + 2vw),16px);
+    } 
+    
+
+}
+img{
+    max-width: 100%;
+}
+
+h1{
+    font-size: 4em;
+    letter-spacing: .4em;
+    line-height: 1.2em;
+}
