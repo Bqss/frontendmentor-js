@@ -1,0 +1,184 @@
+@use "general" as g;
+
+
+body{
+    display: flex;
+    font-family: 'Poppins',sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    min-height: 100vh;
+    background: g.$Red url("./../assets/images/bg-intro-desktop.png");
+    .flex{
+        display: flex;
+        align-content: center;
+    }
+    @media(max-width:1230px)and (min-width : 576px){
+        font-size: clamp(5px,calc(4px + 1vw) , 16px);
+        
+    }
+
+    main{
+
+        .container{
+            margin: 0 auto;
+            width: min(1110px,85%);
+    
+            .left{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                flex: 1 1 53%;
+                padding-right: 4.8em;
+                h1,p{
+                    color: white;
+                }
+                h1{
+                    
+                    margin-bottom: .6em;
+                }
+                p{
+                    line-height: 1.4rem;
+                }
+            }
+            .right{
+                flex: 1 1 47%;
+                & > *{
+                    box-shadow: 0 7px .2rem rgba(0, 0, 0, 0.379);
+                    border-radius: .8rem;
+                }   
+                .bold{
+                    font-weight: 700;
+                }
+                .offer{
+                    background-color: g.$Blue;
+                    padding: 1.5625em 70px;
+                    margin-bottom: 20px;
+                    p{
+                        text-align: center;
+                        color: white;
+    
+                    }
+                }
+                .forms{
+                    background-color: white;
+                    padding: 2.5em;
+                    display: flex;
+                    flex-direction: column;
+                    .validate,.warning{
+                        display: none;
+                        &.error{
+                            display: block;
+                        }
+                    }
+                    & > small{
+                        font-size: .7em;
+                    }
+    
+                    .submit,.tf{
+                        height: 56px;
+                        border-radius: .4rem;
+                        border: none;
+                        
+                        
+                    }
+                    gap: 20px;
+                    .form{
+                        
+                        position: relative;
+                        display: grid;
+                        gap: 10px;
+                        
+                        
+                        
+    
+                        .tf{
+                            width: 100%;
+                            padding: 30px 23px;
+                            outline: 1px solid g.$GrayishBlue;
+                            font-weight: 600;
+                            &:focus{
+                                outline: 1px solid g.$DarkBlue;
+                            }
+                            &.error{
+                                outline: 1px solid g.$Red;
+                                color: g.$Red
+                                
+                            }
+                            &.error::placeholder{
+                                color: g.$Red;
+                            }
+                        }
+                        .validate{
+                            
+                            font-style: oblique;
+                            text-align: right;
+                            align-self: flex-end;
+                            color: g.$Red;
+                        }
+                        .warning{
+                            position: absolute;
+                            top: 25%;
+                            right: 3%;
+                        }
+                    }
+                    .submit{
+                        text-transform: uppercase;
+                        color: white;
+                        background-color: g.$Green;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        &:hover{
+                            background-color: lighten(g.$Green, 7% );
+                            cursor: pointer;
+                        }
+                        
+                    }
+                    .approval{
+                        color: g.$GrayishBlue;
+                        align-self: center;
+                        text-align: center;
+                        .bold{
+                            color: g.$Red;
+                        }
+                    }
+                }
+    
+            }
+            @media(max-width : 567px){
+                font-size: clamp(5px,calc(8px + 2vw),14px);
+                margin: 97px auto 87px;
+                .left{
+                    padding: 0;
+                    margin-bottom: 70px;
+                    h1,p{
+                        text-align: center;
+                        font-size: 2em;
+                    }
+                    p{
+                        font-size: 1.08em;
+                    }
+    
+                }
+                .right{
+                    .forms{
+                        padding: 25px;
+                        
+                        & > small{
+                            font-size: .8em;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    
+    }
+    
+    @media(max-width : 576px){
+        .flex{
+            flex-direction: column;
+        }
+    }
+    
+}

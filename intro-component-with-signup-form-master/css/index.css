@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+body {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  min-height: 100vh;
+  background: hsl(0deg, 100%, 74%) url("./../assets/images/bg-intro-desktop.png");
+}
+body .flex {
+  display: flex;
+  align-content: center;
+}
+@media (max-width: 1230px) and (min-width: 576px) {
+  body {
+    font-size: clamp(5px, 4px + 1vw, 16px);
+  }
+}
+body main .container {
+  margin: 0 auto;
+  width: min(1110px, 85%);
+}
+body main .container .left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 1 53%;
+  padding-right: 4.8em;
+}
+body main .container .left h1, body main .container .left p {
+  color: white;
+}
+body main .container .left h1 {
+  margin-bottom: 0.6em;
+}
+body main .container .left p {
+  line-height: 1.4rem;
+}
+body main .container .right {
+  flex: 1 1 47%;
+}
+body main .container .right > * {
+  box-shadow: 0 7px 0.2rem rgba(0, 0, 0, 0.379);
+  border-radius: 0.8rem;
+}
+body main .container .right .bold {
+  font-weight: 700;
+}
+body main .container .right .offer {
+  background-color: hsl(248deg, 32%, 49%);
+  padding: 1.5625em 70px;
+  margin-bottom: 20px;
+}
+body main .container .right .offer p {
+  text-align: center;
+  color: white;
+}
+body main .container .right .forms {
+  background-color: white;
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main .container .right .forms .validate, body main .container .right .forms .warning {
+  display: none;
+}
+body main .container .right .forms .validate.error, body main .container .right .forms .warning.error {
+  display: block;
+}
+body main .container .right .forms > small {
+  font-size: 0.7em;
+}
+body main .container .right .forms .submit, body main .container .right .forms .tf {
+  height: 56px;
+  border-radius: 0.4rem;
+  border: none;
+}
+body main .container .right .forms .form {
+  position: relative;
+  display: grid;
+  gap: 10px;
+}
+body main .container .right .forms .form .tf {
+  width: 100%;
+  padding: 30px 23px;
+  outline: 1px solid hsl(246deg, 25%, 77%);
+  font-weight: 600;
+}
+body main .container .right .forms .form .tf:focus {
+  outline: 1px solid hsl(249deg, 10%, 26%);
+}
+body main .container .right .forms .form .tf.error {
+  outline: 1px solid hsl(0deg, 100%, 74%);
+  color: hsl(0deg, 100%, 74%);
+}
+body main .container .right .forms .form .tf.error::placeholder {
+  color: hsl(0deg, 100%, 74%);
+}
+body main .container .right .forms .form .validate {
+  font-style: oblique;
+  text-align: right;
+  align-self: flex-end;
+  color: hsl(0deg, 100%, 74%);
+}
+body main .container .right .forms .form .warning {
+  position: absolute;
+  top: 25%;
+  right: 3%;
+}
+body main .container .right .forms .submit {
+  text-transform: uppercase;
+  color: white;
+  background-color: hsl(154deg, 59%, 51%);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+body main .container .right .forms .submit:hover {
+  background-color: #55d39c;
+  cursor: pointer;
+}
+body main .container .right .forms .approval {
+  color: hsl(246deg, 25%, 77%);
+  align-self: center;
+  text-align: center;
+}
+body main .container .right .forms .approval .bold {
+  color: hsl(0deg, 100%, 74%);
+}
+@media (max-width: 567px) {
+  body main .container {
+    font-size: clamp(5px, 8px + 2vw, 14px);
+    margin: 97px auto 87px;
+  }
+  body main .container .left {
+    padding: 0;
+    margin-bottom: 70px;
+  }
+  body main .container .left h1, body main .container .left p {
+    text-align: center;
+    font-size: 2em;
+  }
+  body main .container .left p {
+    font-size: 1.08em;
+  }
+  body main .container .right .forms {
+    padding: 25px;
+  }
+  body main .container .right .forms > small {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 576px) {
+  body .flex {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

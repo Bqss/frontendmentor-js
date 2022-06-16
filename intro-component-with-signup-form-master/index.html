@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <main>
+    <div class="container flex">
+      <div class="left">
+        <h1>Learn to code by watching others</h1>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable. </p>
+      </div>
+      <div class="right">
+        <div class="offer">
+          <p><span class="bold">Try it free 7 days</span> then $20/mo. thereafter</p>
+        </div>
+        <div class="forms">
+          <div class="form">
+            <input type="text" class="tf" placeholder="First Name">
+            <img src="assets/images/icon-error.svg" alt="error" class="warning">
+            <small class="validate">First Name cannot be empty</small>
+          </div>
+          <div class="form">
+            <input type="text" class="tf" placeholder="Last Name">
+            <img src="assets/images/icon-error.svg" alt="error" class="warning">
+            <small class="validate">Last Name cannot be empty</small>
+          </div>
+          <div class="form">
+            <input type="text" class="tf" placeholder="Email Address">
+            <img src="assets/images/icon-error.svg" alt="error" class="warning">
+            <small class="validate">Look like this is not an email</small>
+          </div>
+          <div class="form">
+            <input type="password" class="tf" placeholder="Password">
+            <img src="assets/images/icon-error.svg" alt="error" class="warning">
+            <small class="validate">Password cannot be empty</small>
+          </div>
+          <button class="submit">Claim your free trial </button>
+          <small class="approval"> By clicking the button, you are agreeing to our <span class="bold">Terms and Services</span></small>
+        </div>
+      </div>
+    </div>
+  </main>
+<script src="js/Main.js"></script>
+</body>
+</html>
