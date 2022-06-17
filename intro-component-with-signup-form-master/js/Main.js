@@ -13,7 +13,6 @@ let validate = ()=>{
     tfs.forEach((e,index)=>{
         removeError(e);
         value = e.value;
-        console.log(value);
         if(value ==""){
             addError(e);
 
@@ -39,7 +38,7 @@ function removeError(e){
     let val = e.parentElement;
     // children return all of child , childnodes return all child with specified element
     let child = val.children;
-    console.log(child)
+    
     for(let e of child){
         e.classList.remove("error")
     }

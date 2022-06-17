@@ -1,0 +1,34 @@
+
+$Blue: hsl(223, 87%, 63%);
+$PaleBlue: hsl(223, 100%, 88%);
+$LightRed: hsl(354, 100%, 66%);
+$Gray: hsl(0, 0%, 59%);
+$VeryDarkBlue: hsl(209, 33%, 12%);
+
+*{
+    padding: 0 ;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    font-size: 20px;
+}
+h1,p{
+    text-align: center;
+}
+h1{
+    line-height: 1;
+}
+
+
+main{
+    width: 100%;
+}
+img{
+    max-width: 100%;
+}
+small{
+    font-size: .7em;
+}

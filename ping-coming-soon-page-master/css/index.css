@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  font-size: 20px;
+}
+
+h1, p {
+  text-align: center;
+}
+
+h1 {
+  line-height: 1;
+}
+
+main {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+small {
+  font-size: 0.7em;
+}
+
+body {
+  font-size: 20px;
+  font-family: "Libre Franklin", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 576px) {
+  body {
+    font-size: clamp(12px, 4vw, 20px);
+  }
+}
+body .container {
+  margin: 87px auto;
+  margin-bottom: 50px;
+  width: min(640px, 87%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container > *:not(img) {
+  width: 100%;
+}
+body .container > img {
+  margin-bottom: 3rem;
+}
+body .container .heading {
+  margin-bottom: 4.75rem;
+}
+body .container .heading h1 {
+  margin-bottom: 0.6rem;
+}
+body .container .heading h1 span {
+  font-weight: 300;
+  color: hsl(0deg, 0%, 59%);
+}
+body .container .heading p {
+  margin-bottom: 2rem;
+}
+body .container .heading .form {
+  position: relative;
+  display: flex;
+  gap: 0.75rem;
+}
+body .container .heading .form > *:not(small) {
+  height: 2.75rem 0;
+  padding: 20px 30px;
+  border-radius: 100vmax;
+  border: none;
+  outline: 1px solid #cdd2e8;
+}
+body .container .heading .form input {
+  font-size: 0.9em;
+  flex: 1 1 68%;
+}
+body .container .heading .form input::placeholder {
+  color: #cdd2e8;
+}
+body .container .heading .form input.error {
+  outline: 1px solid hsl(354deg, 100%, 66%);
+}
+body .container .heading .form button {
+  flex: 1 1 32%;
+  background-color: hsl(223deg, 87%, 63%);
+  color: white;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+body .container .heading .form button:hover {
+  cursor: pointer;
+  background-color: #7096f5;
+}
+body .container .heading .form .validate {
+  display: none;
+  position: absolute;
+  left: 30px;
+  bottom: -1.5rem;
+  color: hsl(354deg, 100%, 66%);
+  font-style: italic;
+}
+@media (max-width: 576px) {
+  body .container .heading .form {
+    flex-direction: column;
+    width: 88%;
+    gap: 10px;
+  }
+  body .container .heading .form > *:not(small) {
+    transform: translateX(6%);
+  }
+  body .container .heading .form .validate {
+    position: static;
+    margin-bottom: 15px;
+    transform: translateX(25%);
+  }
+}
+@media (max-width: 576px) {
+  body .container .heading h1 {
+    font-size: 1.5em;
+  }
+  body .container .heading p {
+    font-size: 1em;
+  }
+}
+body .container .image {
+  margin-bottom: 4.75rem;
+}
+body .container .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .bottom ul {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 1.4em;
+}
+body .container .bottom ul a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: hsl(223deg, 87%, 63%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid hsl(223deg, 100%, 88%);
+}
+body .container .bottom ul a:hover {
+  background-color: hsl(223deg, 87%, 63%);
+  color: white;
+}
+body .container .bottom .copyright {
+  color: hsl(0deg, 0%, 59%);
+}
+@media (max-width: 576px) {
+  body .container {
+    margin: 170px auto;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

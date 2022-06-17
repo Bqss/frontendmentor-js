@@ -1,0 +1,152 @@
+@use 'general' as g ;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+body{
+    font-size: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    @media( max-width : 576px){
+        font-size: clamp(12px , calc(4vw) , 20px);
+    }
+    
+    .container{
+        margin: 87px auto;
+        margin-bottom: 50px;
+        width: min(640px,87%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        & > *:not(img){
+            width: 100%;
+        }
+        & > img{
+            margin-bottom: 3rem;
+        }
+        .heading{
+            
+            margin-bottom:  4.75rem;
+            h1{
+                margin-bottom: 0.6rem;
+                span{
+                    font-weight: 300;
+                    color: g.$Gray;
+                }
+            }
+            p{
+                margin-bottom: 2rem;
+                
+            }
+            .form{
+                position: relative;
+                display: flex;
+                gap: .75rem;
+                & > *:not(small){
+                    height: 2.75rem 0;
+                    padding: 20px 30px;
+                    border-radius: 100vmax;
+                    border: none;
+                    outline: 1px solid #cdd2e8;
+                }
+                
+                input{
+                    font-size: .9em;
+                    flex: 1 1 68%;
+                    &::placeholder{
+                        
+                        color: #cdd2e8;
+                    }
+                    &.error{
+                        outline: 1px solid g.$LightRed;
+                    }
+                }
+                button{
+                    flex: 1 1 32%;
+                    background-color: g.$Blue;
+                    color: white;
+                    font-size: .9em;
+                    font-weight: 600;
+                    &:hover{
+                        cursor: pointer;
+                        background-color: lighten(g.$Blue, 7%);
+                    }
+                    
+                }
+                .validate{
+                    display: none;
+                    position: absolute;
+                    left: 30px;
+                    bottom : -1.5rem;
+                    color: g.$LightRed;
+                    font-style: italic;
+                    
+                }
+                @media(max-width : 576px){
+                    flex-direction: column;
+                    width: 88%;
+                    & > *:not(small){
+                       transform: translateX(6%);
+                    }
+                    gap: 10px;
+                    .validate{
+                        position: static;
+                        margin-bottom: calc(25px - 10px);
+                        transform: translateX(25%);
+                    }
+                }
+                
+            }
+            @media(max-width : 576px){
+                h1{
+                    font-size: 1.5em;
+                }
+                p{
+                    font-size: 1em;
+                }
+            }
+            
+        }
+        .image{
+            margin-bottom: 4.75rem;
+        }
+        .bottom{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            ul{
+                display: flex;
+                justify-content: center;
+                gap: 13px;
+                margin-bottom: 1.4em;
+                a{
+                    display: inline-block;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    color: g.$Blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    border: 1px solid g.$PaleBlue;
+                    &:hover{
+                        background-color: g.$Blue;
+                        color: white;
+                        
+                    }
+                   
+                }
+                
+            }
+            .copyright{
+                color: g.$Gray;
+            }
+
+            
+        }
+        @media(max-width : 576px){
+            margin: 170px auto;
+        }   
+    }
+}
