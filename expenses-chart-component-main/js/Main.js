@@ -8,14 +8,16 @@ let total = data.map((e)=> parseInt(e.amount));
 total.sort();
 
 // adding chart with amount and day name in each iteration
-
-data.forEach((e,i)=>{
-    let child = createChart(e.amount , e.day);
-    // creating a chart and add into parent 
-    chart.innerHTML += child;
-    // check it's max or not , if max add "max "class into fill class inside the element
-    checkIsMax(e.amount ,i);
-});
+window.onload= ()=>{
+    data.forEach((e,i)=>{
+        let child = createChart(e.amount , e.day);
+        // creating a chart and add into parent 
+        chart.innerHTML += child;
+        // check it's max or not , if max add "max "class into fill class inside the element
+        checkIsMax(e.amount ,i);
+    });
+    
+}
 
 
 function createChart(data,dayName){
