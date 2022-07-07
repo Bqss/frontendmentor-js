@@ -1,0 +1,151 @@
+@use 'general' as g;
+header{
+    margin: 0 auto;
+    align-items: center;
+    font-size: .85em;
+    padding: 1.1em 0;
+    font-weight: 500;
+    width: min(1360px , 90%);
+    .logo{
+        margin-right: 2.22em;
+    }
+    .menu-trigger {
+        width: 32px;
+        aspect-ratio: 1/1;
+        display: none;
+    }
+    .navbar {
+        width: 100%;
+        .nav-wrapper{
+            justify-content: space-between;
+            a{
+                color: g.$MediumGray;
+                transition: all .3s;
+                &:hover{
+                    color: black;
+                }
+            }
+            
+            & > ul{
+                align-items: center;
+            }
+            .links{
+                
+                gap: 2.22em ;
+                .close-trigger{
+                    display: none;
+                }
+                & > li a img{
+                    margin-left: .5em;
+                }
+                .trigger {
+                    position: relative;
+                    a > img{
+                        transition: all .5s;
+                        &.active{
+                            transform: rotate(180deg);
+                        }
+                        
+                    }
+                    ul{
+                        display: none;
+                        
+                        a{            
+                            transition: opacity .3s;
+                            display: flex;
+                            height: 2em;
+                            gap: 1em;
+                            align-items: center;
+                            &:hover{
+                                img{
+                                    transform: scale(1.2);
+                                }
+                            }
+                            img{
+                                width: 15px;
+                            }    
+                        }
+                        &.active{
+                            display: flex;
+                            position: absolute;
+                            padding: 1.33em;
+                            top: 50px;
+                            right: 0;
+                            box-shadow: 0 0 2rem rgba(128, 128, 128, 0.342);
+                            width: max-content;
+                            background-color: white;
+                            border-radius: .5em;
+                            transition: opacity .5s;
+                        }
+                        &.expanse{
+                            display: flex;
+                            margin-top: 2.22em;
+                            margin-left: 2em;
+                            gap: 1em;
+                        }
+                    }
+                    &:nth-of-type(2) ul.active{
+                        right: unset;
+                        left: 0;
+                    }
+                }
+            }
+            .join-with-us{
+                gap: 1.1em;
+            }
+            .close-trigger{
+                display: none;
+            }
+        }
+
+    }
+    @media(max-width : 770px){
+        padding: 1.7em 0;
+        justify-content: space-between;
+        .menu-trigger{
+            display: block;
+        }
+        .navbar{
+            
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            transform: translateX(100vw);
+            transition: all .5s ease;
+            background-color: rgba(0, 0, 0, 0.466);
+            display: flex;
+            justify-content: flex-end;
+            
+            .nav-wrapper{
+                padding: 1.7em;
+                padding-right: 1.7em;
+                width: max(240px,60%);
+                background-color: white;
+                height: 100%;
+                flex-direction: column;
+                justify-content: unset;
+                z-index: 99;
+                
+                .links{
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .join-with-us{
+                    flex-direction: column;
+                }
+                .close-trigger {
+                    display: block;
+                    align-self: flex-end;
+                    margin-bottom: 2em;
+                }
+                
+            }
+            &.active{
+                transform: translateX(0);
+            }
+            
+        }
+    }
+}

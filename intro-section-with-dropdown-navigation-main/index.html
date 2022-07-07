@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <header class="flex">
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="logo" class="logo">
+    </div>
+    <div class="menu-trigger">
+      <img src="assets/images/icon-menu.svg" alt="">
+    </div>
+    <nav class="navbar ">
+      <div class="nav-wrapper flex">
+        <div class="close-trigger">
+          <img src="assets/images/icon-close-menu.svg" alt="">
+        </div>
+        <ul class="links flex">
+          
+          <li class="trigger" >
+            <a href="#">Features<img src="assets/images/icon-arrow-down.svg" alt="icon-arrow-down"></a>
+            <ul class="flex-column ">
+              <li><a href="#"><img src="assets/images/icon-todo.svg" alt="icon-todo">Todo List</a></li>
+              <li><a href="#"><img src="assets/images/icon-calendar.svg" alt="icon-calendar">Calendar</a></li>
+              <li><a href="#"><img src="assets/images/icon-reminders.svg" alt="icon-reminders">Reminders</a></li>
+              <li><a href="#"><img src="assets/images/icon-planning.svg" alt="icon-planning">Planning</a></li>
+            </ul>
+          </li>
+          <li class="trigger">
+            <a  href="#">Company<img src="assets/images/icon-arrow-down.svg" alt="icon-arrow-down"></a>
+            <ul class="flex-column ">
+              <li><a href="#">History</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <div class="join-with-us flex">
+          <button class="btn">Login</button>
+          <button class="btn border">Register</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container flex">
+      <div class="left flex-column">
+        <h1>Make remote work</h1>
+        <p class="indent">Get your team in sync, no matter your location. Streamline processes, 
+          create team rituals, and watch productivity soar.</p>
+        <button class="btn border black">Learn more</button>
+        <div class="supported-to flex">
+          <img src="assets/images/client-databiz.svg" alt="">
+          <img src="assets/images/client-audiophile.svg" alt="">
+          <img src="assets/images/client-meet.svg" alt="">
+          <img src="assets/images/client-maker.svg" alt="">
+        </div>
+      </div>
+      <div class="right">
+        <picture>
+          <source media="(min-width: 770px)" srcset="assets/images/image-hero-desktop.png">
+          <source media="(max-width: 768px )" srcset="assets/images/image-hero-mobile.png">
+          <img  alt="avatar" >
+        </picture>
+      </div>
+    </div>
+  </main>
+  <script src="js/Main.js"></script>
+</body>
+</html>

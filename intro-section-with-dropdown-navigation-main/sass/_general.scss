@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+$AlmostWhite: hsl(0, 0%, 98%);
+$MediumGray: hsl(0, 0%, 41%);
+$AlmostBlack: hsl(0, 0%, 8%);
+:root{
+    font-size: 18px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+body{
+    font-family: "Epilogue";
+    min-height: 100vh;
+    font-size: 18px;
+    background-color: $AlmostWhite;
+   
+
+    @media(max-width:1090px){
+            font-size: clamp(16px,calc(1px + 1.5vw),18px);
+        
+    }
+
+}
+img{
+    max-width: 100%;
+}
+header,main{
+    width: 100%;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    padding: .8em 1.5em;
+    background-color: $AlmostWhite;
+    color: $MediumGray;
+    border-radius: 1em;
+    font-size: 1em;
+    font-weight: 700;
+    transition: all .3s;
+
+    @media(max-width: 768px){
+        background-color: white;
+    }
+    
+    &:hover{
+        color: black;
+        cursor: pointer;
+        
+    }
+}
+.border{
+    border: 2px solid $MediumGray;
+    color: $MediumGray;
+    &:hover{
+        border-color: black;
+        color: black;
+    }
+}
+li ul{
+    display: none;
+}
+li{
+    height: min-content;
+    width: fit-content;
+}
+.container{
+    width: min(1140px,90%);
+    margin: 0 auto;
+    
+}
+
+h1{
+    font-size: 4.2em;
+}
+p{
+    color: $MediumGray;
+    line-height: 1.5;
+    font-size: .95em;
+}
+.indent{
+    width: min(430px,100%);
+}
+.black {
+    background: black;
+    color: white;
+    &:hover{
+        background-color: $AlmostWhite;
+        color: black;
+        border: 1px solid black;
+    }
+}
