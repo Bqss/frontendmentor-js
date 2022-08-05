@@ -55,6 +55,7 @@ main{
                 color: g.$p;
                 &:hover{
                     color: white;
+                    cursor: pointer;
                 }
                 &.active{
                     color: white;
@@ -85,26 +86,13 @@ main{
             justify-content: space-between;
             align-items: center;
         }
-        .text.active{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
 
-            p{
-                margin-top: .7em;
-                font-size: .8em;
-            }
-            @media(max-width : 590px){
-                flex-direction: row;
-                
-            }
-        }
 
         &.Work{
             background: url(./../assets/images/icon-work.svg);
             background-position: 90% 0;
             background-repeat: no-repeat;
-            background-color: g.$Lightred;
+            background-color: g.$Lightorange;
         }
         &.Play{
             background: url(./../assets/images/icon-play.svg);

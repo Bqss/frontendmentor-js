@@ -1,66 +1,55 @@
-import data from "./../data.json" assert{type:"json"};
+const menus = document.querySelectorAll('.menus li');
+const boxs = document.querySelectorAll('.box');
 
-window.onload = ()=>{
-    let container = document.querySelector(".container");
-    console.log(container)
-    for(let a of data){
-        let parent = document.createElement('div');
-        let judul = a.title.replace(" ","");
-        parent.classList.add("box");
-        parent.classList.add(judul);
-        let content = document.createElement('div');
-        content.classList.add("content");
-        content.innerHTML = `
-        <div class="title">
-            <h5>${judul}</h5>
-            <img src="assets/images/icon-ellipsis.svg">
-        </div>`;
-        for(let [k,v] of Object.entries(a["timeframes"])){
-            content.innerHTML += createElement(k,v);
-        }
-        parent.appendChild(content);
-        container.appendChild(parent);
+const loadData = async (timeframes) => {
+    try {
+        let data = await fetch('./data.json');
+        data = await data.json();
+        data.forEach((val, id) => {
+            const { current, previous } = val.timeframes[timeframes];
+            const box = boxs[id];
+            animate(box.querySelector('.current'), 'current', current);
+            animate(box.querySelector('.previous'), 'previous', previous);
+        })
+    } catch (error) {
+        console.log(error)
     }
+}
 
-    let  texts = document.querySelectorAll(".text");
-    let menus = document.querySelectorAll(".menus li");
-    menus.forEach((e)=>{
-        
-        e.onclick= ()=>{
-            
-            reset(texts,menus);
-            e.classList.add("active");
-            for(let b of texts){
-                if(b.classList.contains(e.innerText.toLowerCase())){
-                    b.classList.add("active");
-                }
-            }
+const animate = (element, timeStamp, hours) => {
+    let start = 0;
+    const duration = 5;
+    const speed = 10;
+    const grow = hours * (speed / 100) / duration;
+    const timer = setInterval(() => {
+        if (hours == 0) {
+            element.innerText = 0;
+            clearInterval(timer)
         }
-    });
-     
-    
+        if (start <= hours) {
+            element.innerText = generateLabel(Math.round(start), timeStamp);
+            start += grow;
+        } else {
+            clearInterval(timer);
+        }
+    }, speed)
 }
-function reset(texts , menus){
-    texts.forEach((e)=>{
-        e.classList.remove("active");
-    });
-    menus.forEach((e)=>{
-        e.classList.remove("active");
-    });
+
+const generateLabel = (numOfH, label) => {
+    const res = numOfH > 1 ? numOfH + 'hrs' : numOfH + 'hr';
+    return label === 'current' ? res : `Last Week - ${res}`
 }
-function createElement(key,val){
-    
-    return key === "daily" ? `
-        
-        <div class="text ${key} active">
-            <h1>${val.current}hrs</h1>
-            <p>Last ${key.slice(0,key.length-2).replace("i","y")} - ${val.previous}hrs</p>
-        </div>
-       
-    `: `
-            <div class="text ${key}">
-                <h1>${val.current}hrs</h1>
-                <p>Last ${key.slice(0,key.length-2).replace("i","y")} - ${val.previous}hrs</p>
-            </div>
-    `; 
-}
+
+menus.forEach(e => {
+    e.addEventListener('click', (event) => {
+        loadData(event.target.innerText.toLowerCase());
+        menus.forEach(e => e.classList.remove('active'))
+        event.target.classList.add('active');
+
+    })
+});
+
+loadData('weekly');
+
+
+

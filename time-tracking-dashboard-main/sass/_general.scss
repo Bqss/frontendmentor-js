@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
-$Lightred : hsl(15, 100%, 70%);    // work
+$Lightorange : hsl(15, 100%, 70%);    // work
 $Softblue : hsl(195, 74%, 62%);    //play
 $Lightred : hsl(348, 100%, 68%);   //study
 $Limegreen : hsl(145, 58%, 55%);   //exercise
@@ -43,6 +43,11 @@ $PaleBlue: hsl(236, 100%, 87%);
 }
 .content{
     background: $Darkblue;
+    transition: .3s;
+    &:hover{
+        background-color: hsl(235, 30%, 35%);
+        cursor: pointer;
+    }
 }
 
 body{
@@ -83,4 +88,18 @@ h2{
 p{
     font-size: .8em;
     color: $PaleBlue;
+}
+button{
+    background-color: transparent;
+    border: none;
+    
+    & svg{
+        fill : hsl(236deg, 100%, 87%);
+        transition: .3s;
+        &:hover {
+            fill: white;
+            cursor: pointer;
+        }
+    }
+
 }

@@ -41,6 +41,11 @@
 
 .content {
   background: hsl(235deg, 46%, 20%);
+  transition: 0.3s;
+}
+.content:hover {
+  background-color: hsl(235deg, 30%, 35%);
+  cursor: pointer;
 }
 
 body {
@@ -83,6 +88,19 @@ h2 {
 p {
   font-size: 0.8em;
   color: hsl(236deg, 100%, 87%);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+button svg {
+  fill: hsl(236deg, 100%, 87%);
+  transition: 0.3s;
+}
+button svg:hover {
+  fill: white;
+  cursor: pointer;
 }
 
 main {
@@ -143,6 +161,7 @@ main .person .menus li {
 }
 main .person .menus li:hover {
   color: white;
+  cursor: pointer;
 }
 main .person .menus li.active {
   color: white;
@@ -171,25 +190,11 @@ main .box .title {
   justify-content: space-between;
   align-items: center;
 }
-main .box .text.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-main .box .text.active p {
-  margin-top: 0.7em;
-  font-size: 0.8em;
-}
-@media (max-width: 590px) {
-  main .box .text.active {
-    flex-direction: row;
-  }
-}
 main .box.Work {
   background: url(./../assets/images/icon-work.svg);
   background-position: 90% 0;
   background-repeat: no-repeat;
-  background-color: hsl(348deg, 100%, 68%);
+  background-color: hsl(15deg, 100%, 70%);
 }
 main .box.Play {
   background: url(./../assets/images/icon-play.svg);
@@ -225,5 +230,4 @@ main .box.SelfCare {
   main .box {
     height: 200px;
   }
-}
-
+}/*# sourceMappingURL=index.css.map */
