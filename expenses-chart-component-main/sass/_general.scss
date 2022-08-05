@@ -6,18 +6,16 @@ $Mediumbrown: hsl(28, 10%, 53%);
 $Cream: hsl(27, 66%, 92%);
 $Verypaleorange: hsl(33, 100%, 98%);
 
-*{
+* ,
+*::after,
+*::before{
+
     padding: 0;
     margin:0;
     box-sizing: border-box;
     
 }
 
-*::after , *::before{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 body{
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
@@ -51,4 +49,5 @@ h2{
 h1{
     font-size: 2.6em;
 }   
+
 

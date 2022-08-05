@@ -1,31 +1,26 @@
-// importing json file as data 
-import data from "./data.json" assert{type:"json"};
-// getting the chart container 
-let chart = document.querySelector(".charts");
-// getting all data ammount and convert it into a array 
-let total = data.map((e)=> parseInt(e.amount));
-// sort 
-total.sort();
-
-// adding chart with amount and day name in each iteration
-window.onload= ()=>{
-    data.forEach((e,i)=>{
-        let child = createChart(e.amount , e.day);
-        // creating a chart and add into parent 
+let max;
+const chart = document.querySelector(".charts");
+const loadChart = async () => {
+    let data;
+    try {
+        data = await fetch('./js/data.json');
+        data = await data.json();
+        max = Math.max(...data.map(e => e.amount));
+    } catch (err) {
+        console.error('an error has encoured ' + err);
+    }
+    data.forEach((e) => {
+        let child = createChart(e.amount, e.day);
         chart.innerHTML += child;
-        // check it's max or not , if max add "max "class into fill class inside the element
-        checkIsMax(e.amount ,i);
     });
-    
 }
 
-
-function createChart(data,dayName){
+const createChart = (data, dayName) => {
 
     return `
     <div class="chart">
         <div class="diagram">
-            <div class="fill" style="height : ${data/70*100}%">
+            <div class="fill ${data === max ? 'max' : ''}" style="height : ${data / 70 * 100}%">
                 <p class="ammount">$${data}</p>
             </div>
         </div>
@@ -34,13 +29,8 @@ function createChart(data,dayName){
     `;
 }
 
-function checkIsMax(data , index){
-    if(parseInt(data) ==  total[total.length-1]){
-        console.log("true")
-        // get the fill class at nth chart based on the index of data 
-        document.querySelector(`.chart:nth-of-type(${index+1}) .fill`).classList.add("max");
-    }
-}
+loadChart();
+
 
 
 
