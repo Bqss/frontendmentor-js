@@ -229,6 +229,11 @@ h1, h2, h3, h4 {
 h2 {
   font-size: 2em;
 }
+@media (min-width: 725px) {
+  h2 {
+    font-size: 2.4em;
+  }
+}
 
 h3 {
   font-size: 1.7em;
@@ -365,7 +370,7 @@ p {
   animation: breath 1s infinite alternate ease-in;
 }
 .header .hero__text h1 {
-  font-size: 2.7em;
+  font-size: 3.3em;
   letter-spacing: 1rem;
   margin-bottom: 11rem;
 }
@@ -398,11 +403,11 @@ p {
     padding: 5rem 11rem;
   }
 }
-.main .fiture--description[role=reverse] {
+.main .fiture--description .reverse {
   padding: 7rem 3rem;
 }
 @media (min-width: 725px) {
-  .main .fiture--description[role=reverse] {
+  .main .fiture--description .reverse {
     padding: 5rem 14.5rem;
   }
 }
