@@ -50,7 +50,7 @@ tfPeople.onkeyup = ()=>{
     }
 }
 function checkIsEmpty(element){
-    return element.value == '0' ;
+    return element.value == '0' || isNan(Number(element.value));
 }
 function getTotal(bill,percentage,numOfPeople){
     return {
