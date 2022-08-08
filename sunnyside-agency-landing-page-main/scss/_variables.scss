@@ -1,0 +1,37 @@
+$red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$green-dark: hsl(167, 40%, 24%);
+$blue: hsl(198, 62%, 26%), ;
+$green-light:hsl(168, 34%, 61%);
+$neutral1:hsl(212, 27%, 19%);
+$neutral2:hsl(213, 9%, 39%);
+$neutral3:hsl(232, 10%, 55%);
+$neutral4:hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+@keyframes slide{
+    0%{
+        transform: translateX(200%) ;
+        opacity: 0;
+    }
+    60%{
+        opacity: .2;
+        
+    }
+    100%{
+        opacity: 1;
+        
+    }
+}
+
+@keyframes breath{
+    0%{
+        margin-top: 0;
+    }
+    50%{
+        margin-top: -3rem;
+    }
+    100%{
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,91 @@
+$displays : flex ,grid, inline , inline-block ;
+$basis : 1rem ;
+$sizes : (
+    "1" : $basis * .25,
+    "2" : $basis * .5,
+    "3" : $basis * .75,
+    "4" : $basis * 1,
+    "5" : $basis * 1.25,
+    "6" : $basis * 1.5,
+    "7" : $basis * 1.75,
+    "8" : $basis * 2,
+    "9" : $basis * 2.25,
+    "10" : $basis * 2.5,
+    "11" : $basis * 2.75,
+    "12" : $basis * 3,
+    "13" : $basis * 3.25,
+    "14" : $basis * 3.5,
+    "15" : $basis * 3.75,
+    "16" : $basis * 4,
+    "17" : $basis * 4.25,
+    "18" : $basis * 4.5,
+    "19" : $basis * 4.75,
+    "20" : $basis * 5,
+
+);
+
+$text-colors: (
+    "neutral1":hsl(212, 27%, 19%),
+    "neutral2":hsl(213, 9%, 39%),
+    "neutral3":hsl(232, 10%, 55%),
+    "neutral4":hsl(210, 4%, 67%),
+    "white": hsl(0, 0%, 100%),
+);
+
+$main-color : (
+    "red": hsl(7, 99%, 70%),
+    "yellow": hsl(51, 100%, 49%),
+    "green--dark": hsl(167, 40%, 24%),
+    "blue": hsl(198, 62%, 26%),  
+    "green--light":hsl(168, 34%, 61%)
+);
+
+@each $key,$val in $main-color{
+    .underline{
+        &-#{$key}{
+            --accent : #{opacify($val , .9%)};
+        }
+    }
+}
+$positions : relative, fixed , absolute ;
+@each $position in $positions{
+    .#{$position}{
+        position: $position;
+    }
+}
+
+
+
+@each $color,$value in $text-colors {
+    
+    .text{
+        &-#{$color}{
+            color: $value;
+        }
+    }
+}
+
+@each $size , $value in $sizes{
+    
+    .g{
+        &-#{$size}{
+            gap: $value;
+        }
+    }
+} 
+@each $display in $displays {
+    .#{$display}{
+        display: $display;
+    }
+}
+
+
+@mixin minQuery($propertyName, $defaultValue, $breakPoints:()){
+    #{$propertyName} : $defaultValue ;
+    @each $breakpoint, $val in $breakPoints {
+        @media (min-width : $breakpoint){
+            #{$propertyName} : $val;
+        }
+    }
+}
+
