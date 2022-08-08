@@ -384,7 +384,7 @@ p {
 }
 .main .fiture--description {
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   padding: 7rem 3rem;
 }
@@ -406,11 +406,11 @@ p {
     padding: 5rem 14.5rem;
   }
 }
-.main .fiture--description [role=learn-more] {
+.main .fiture--description .learn-more {
   width: fit-content;
   position: relative;
 }
-.main .fiture--description [role=learn-more]::after {
+.main .fiture--description .learn-more::after {
   content: "";
   width: 110%;
   height: 0.4em;
@@ -424,6 +424,7 @@ p {
 @media (max-width: 72.5rem) {
   .main .fiture--description {
     text-align: center;
+    align-items: center;
   }
 }
 .main .service--description {

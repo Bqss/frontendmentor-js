@@ -215,7 +215,7 @@ p{
     
         &--description{
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             @include minQuery(gap , 3rem, (725px : 5rem));
             @include minQuery(padding , 7rem 3rem , (725px: 5rem 11rem));
 
@@ -223,7 +223,7 @@ p{
                 @include minQuery(padding , 7rem 3rem , (725px: 5rem 14.5rem));
             }
             
-            [role="learn-more"]{
+            .learn-more{
                 width: fit-content;
                 position: relative;
 
@@ -239,12 +239,11 @@ p{
                     background-color: var(--accent);
                 }
             }
-            
-            
         }
         @media(max-width: 72.5rem){
             &--description{
                 text-align: center;
+                align-items: center;
             }
         }
 
