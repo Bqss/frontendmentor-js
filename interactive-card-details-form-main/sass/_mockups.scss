@@ -1,0 +1,24 @@
+.design{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    margin: 0 auto;
+    z-index: -1  ;
+}
+
+.desktop{
+    display: none;
+}
+.mobile{
+    display: block;
+}
+
+@media (min-width : 800px){
+    .desktop{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+}

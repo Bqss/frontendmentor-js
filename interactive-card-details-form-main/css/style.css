@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+.design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+}
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.block {
+  display: block;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.text-white {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.bg-white {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+.text-verydarkviolet {
+  color: hsl(278deg, 68%, 11%);
+}
+
+.bg-verydarkviolet {
+  background-color: hsl(278deg, 68%, 11%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  font-size: 1.8rem;
+  font-family: "Space Grotesk";
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  width: 100%;
+  padding: 1.11em 0;
+  font-size: 1em;
+  border: none;
+  border-radius: 0.5em;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  margin-top: 2.22em;
+}
+.btn-primary {
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(0deg, 0%, 100%);
+}
+.btn-primary:hover {
+  background-color: hsl(279deg, 6%, 55%);
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.flex-rs {
+  flex-direction: column;
+}
+@media (min-width: 864px) {
+  .flex-rs {
+    flex-direction: row;
+  }
+}
+.flex-sb {
+  justify-content: space-between;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+[class*=overlay] {
+  z-index: 1;
+  border-radius: 0.5em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.label {
+  display: block;
+  font-size: 0.65em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+}
+
+input[type=text] {
+  padding: 1rem 1.6rem;
+  font-size: 1em;
+  border-radius: 0.6em;
+  border: 1px solid hsl(270deg, 3%, 87%);
+  width: 100%;
+  background-color: white;
+  letter-spacing: 2px;
+}
+input[type=text]::placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+input[type=text]:focus {
+  outline: none;
+  border: 1px solid hsl(249deg, 99%, 64%);
+}
+
+.input__group {
+  margin-bottom: 1.5rem;
+}
+
+.wrapper {
+  align-items: center;
+  height: 100vh;
+  background: white url("./../images/bg-main-desktop.png") no-repeat left;
+  background-size: 33% 100%;
+}
+@media (max-width: 865px) {
+  .wrapper {
+    background: white url("./../images/bg-main-mobile.png") no-repeat top;
+    background-size: 100% 33%;
+  }
+}
+.wrapper .container {
+  margin: 0 auto;
+  width: min(105rem, 73%);
+  gap: 10rem;
+  justify-content: space-between;
+  font-size: clamp(1.1rem, -0.0666666667rem + 1.2962962963vw, 1.8rem);
+}
+.wrapper .container__card {
+  height: auto;
+  flex-direction: column;
+  gap: clamp(1rem, -3.1666666667rem + 4.6296296296vw, 3.5rem);
+  left: -3rem;
+}
+.wrapper .container__form {
+  width: 37rem;
+  align-items: center;
+  margin-right: 4.3rem;
+}
+.wrapper .container__form .bottom {
+  gap: 2rem;
+}
+.wrapper .container__form .bottom > div {
+  flex: 50%;
+}
+.wrapper .container__form .bottom .date-form {
+  gap: 1rem;
+}
+.wrapper .container .card--number {
+  margin-bottom: 5%;
+  font-size: 1.7em;
+}
+.wrapper .container .card--logo {
+  width: 4.66em;
+}
+.wrapper .container .card__front__overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.8rem 3.4rem 2.9rem 3.2rem;
+  justify-content: space-between;
+}
+.wrapper .container .card__back {
+  left: 20%;
+}
+.wrapper .container .card__back__overlay {
+  top: 44%;
+  right: 12%;
+}
+@media (max-width: 864px) {
+  .wrapper .container {
+    align-items: center;
+    gap: 0;
+  }
+  .wrapper .container__card {
+    left: -10%;
+    top: -4rem;
+    flex-direction: column-reverse;
+  }
+  .wrapper .container__form {
+    position: relative;
+    top: -4rem;
+    font-size: 1.5rem;
+    margin-right: 0;
+    width: min(37rem, 110%);
+  }
+  .wrapper .container__form .bottom {
+    gap: 1rem;
+  }
+  .wrapper .container__form .bottom.date-form {
+    gap: 0.5rem;
+  }
+  .wrapper .container .card__front {
+    top: -8rem;
+    z-index: 1;
+  }
+  .wrapper .container .card__front--bg,
+.wrapper .container .card__back--bg {
+    max-width: 28.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */
