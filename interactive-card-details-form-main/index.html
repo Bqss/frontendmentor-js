@@ -17,11 +17,6 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- <img src="./design/desktop-design.jpg" alt="" class="desktop design" /> -->
-    <!-- <img src="./design/complete-state-desktop.jpg" alt="" class="desktop design" /> -->
-    <!-- <img src="./design/active-states.jpg" alt="" class="desktop design" /> -->
-    <!-- <img src="./design/mobile-design.jpg" alt="" class="mobile design" /> -->
-    <!-- <img src="./design/complete-state-mobile.jpg" alt="" class="mobile design" /> -->
 
     <main class="main">
       <div class="wrapper flex">
@@ -37,7 +32,7 @@
                 class="card__front__overlay absolute text-white flex flex-column"
               >
                 <div class="card__header">
-                  <img src="./images/card-logo.svg" alt="" class="card--logo" />
+                  <img src="./images/card-logo.svg" alt="card-logo" class="card--logo" />
                 </div>
                 <div class="card__body">
                   <p class="card--number" value="">0000 0000 0000 0000</p>
@@ -64,7 +59,7 @@
             </div>
           </div>
           <div class="container__form flex">
-            <form class="form__container bg-white">
+            <form class="form__container bg-white ">
               <div class="input__group">
                 <label for="card_name" class="uppercase label"
                   >Cardholder Name</label
@@ -129,6 +124,12 @@
               </div>
               <input type="submit" value="Confirm" class="btn btn-primary" />
             </form>
+            <div class="response__container  flex-column" style="display: none;">
+              <img src="./images/icon-complete.svg" alt="succes">
+              <h1 class="uppercase">thank you!</h1>
+              <p class="text-Darkgrayishviolet">We've added your card details</p>
+              <button class="btn btn-primary" id="btn-continue">Continue</button>
+            </div>
           </div>
         </div>
       </div>

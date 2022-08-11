@@ -1,4 +1,4 @@
-$displays : flex grid block ;
+$displays : flex grid block none;
 
 @each $display in $displays {
     .#{$display}{
@@ -8,7 +8,8 @@ $displays : flex grid block ;
 }
 $colors : (
     "white" : hsl(0, 0%, 100%),
-    "verydarkviolet" : hsl(278, 68%, 11%)
+    "verydarkviolet" : hsl(278, 68%, 11%),
+    "Darkgrayishviolet": hsl(279, 6%, 55%)
 );
 $positions : relative absolute ;
 

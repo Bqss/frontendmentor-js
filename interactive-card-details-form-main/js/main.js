@@ -9,28 +9,29 @@ const cardCvc = document.querySelector('.card--CVC');
 const cardForm = document.querySelector('.form__container');
 const blankError = "Can't be blank";
 const containNumberError = "Wrong format, numbers only"; 
+const continueBtn = document.querySelector('#btn-continue');
 
 cardNameIn.oninput = () => {
     cardName.innerText = cardNameIn.value;
-    errorHandler( cardNameIn , validate(cardNameIn));
+    validate(cardNameIn);
    
 }
 cardCvcIn.oninput = () => {
     cardCvc.innerText = cardCvcIn.value;
-    errorHandler(cardCvcIn , validate2(cardCvcIn));
+    cardCvcIn , validate2(cardCvcIn)
 
 }
 cardDateIn.forEach( (e, i) => {
     e.oninput = (event) => {
         cardDate[i].innerText = e.value;
-        errorHandler( event.target , validate2(event.target));
+        validate2(event.target)
 
     }
 });
 
 cardNumberIn.oninput = () => {
     const cardNumber = cardNumberIn.value.replaceAll(' ','');
-    errorHandler(cardNumberIn, validate2(cardNumberIn));
+    validate2(cardNumberIn);
 
     if(cardNumber ===''){
         cardNum.innerText = '0000 0000 0000 0000';
@@ -43,33 +44,46 @@ cardNumberIn.oninput = () => {
 
 cardForm.addEventListener('submit' , (event) => {
    event.preventDefault();
-    console.log(validateAll());
+    if(validateAll()){
+        const response =  document.querySelector('.response__container');
 
+        cardForm.style.display = "none";
+        response.style.display = "flex";
+    }
 });
+continueBtn.onclick = () => {
+    const response = document.querySelector('.response__container');
+    reset(cardForm);
+    cardForm.style.display = 'block';
+    response.style.display = 'none';
+    
+}
 
 // util
 const validate2 = (element) => {
-
+    let res =  true;
     if(IsBlank(element)){
-        generateError(element , blankError);
-        return false;
-    }
-    if(isNotContainNumber(element)){
-        generateError(element, containNumberError);
-        return false;
+        res = generateError(element, blankError);
+    }else if(isNotContainNumber(element)){
+        res = generateError(element, containNumberError);
     }else{
         removeError(element);
-        return true;
+        res = true;
     }
+    errorHandler(element , res);
+    return res;
 }
 const validate = (element)=> {
+    let res = true;
     if(IsBlank(element)) {
         generateError(element ,blankError);
-        return false;
+        res = false;
     }else{
         removeError(element);
-        return true;
+        res=  true;
     }
+    errorHandler(element,res);
+    return res;
 }
 
 const generateError = (element , message) => {
@@ -97,11 +111,15 @@ const errorHandler = (element,conditional) => {
     conditional ? element.classList.remove('wrong') : element.classList.add('wrong');
 }
 const validateAll = () => { 
-    const isValidName = validate(cardNumberIn) ;
+    const isValidName = validate(cardNameIn) ;
     const isValidNumber = validate2(cardNumberIn)
     const isValidDate = validate2(cardDateIn[0]) && validate2(cardDateIn[1]);
     const isValidCVC = validate2(cardCvcIn);
     return isValidName && isValidNumber && isValidDate && isValidCVC;
+}
+const reset = (form) => {
+    const inputs = form.querySelectorAll('input[type="text"]');
+    inputs.forEach(e => e.value ="");
 }
 
 
