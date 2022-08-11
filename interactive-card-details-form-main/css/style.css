@@ -104,6 +104,18 @@ img {
   cursor: pointer;
 }
 
+.validate {
+  font-size: 0.6em;
+  color: hsl(0deg, 100%, 66%);
+  display: none;
+  margin-top: 0.3rem;
+}
+.validate--absolute {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+}
+
 .flex-rs {
   flex-direction: column;
 }
@@ -151,6 +163,10 @@ input[type=text]::placeholder {
 input[type=text]:focus {
   outline: none;
   border: 1px solid hsl(249deg, 99%, 64%);
+}
+input[type=text].wrong {
+  border: none;
+  outline: 1px solid hsl(0deg, 100%, 66%);
 }
 
 .input__group {

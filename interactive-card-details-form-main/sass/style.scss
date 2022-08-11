@@ -46,6 +46,17 @@ main {
     cursor: pointer;
   }
 }
+.validate{
+  font-size: .6em;
+  color: $Red;
+  display: none;
+  margin-top: .3rem;
+  &--absolute{
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+  }
+}
 .flex {
   &-rs {
     @include minQuery(
@@ -94,7 +105,10 @@ input[type="text"] {
   &:focus{
     outline: none;
     border: 1px solid hsl(249, 99%, 64%);
-    
+  }
+  &.wrong{
+    border: none;
+    outline: 1px solid $Red;
   }
 }
 .input__group {
