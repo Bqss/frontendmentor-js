@@ -43,7 +43,7 @@ cardNumberIn.oninput = () => {
 
 cardForm.addEventListener('submit' , (event) => {
    event.preventDefault();
-   validateAll();
+    console.log(validateAll());
 
 });
 
@@ -97,7 +97,11 @@ const errorHandler = (element,conditional) => {
     conditional ? element.classList.remove('wrong') : element.classList.add('wrong');
 }
 const validateAll = () => { 
-    const isValidName = IsBlank()
+    const isValidName = validate(cardNumberIn) ;
+    const isValidNumber = validate2(cardNumberIn)
+    const isValidDate = validate2(cardDateIn[0]) && validate2(cardDateIn[1]);
+    const isValidCVC = validate2(cardCvcIn);
+    return isValidName && isValidNumber && isValidDate && isValidCVC;
 }
 
 
