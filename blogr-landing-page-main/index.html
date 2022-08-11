@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | [Blogr]</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container container--center">
+        <nav class="navbar">
+          <div class="navbar__left">
+            <img src="./images/logo.svg" alt="logo" class="navbar__logo">
+            <ul class="navbar__link-wrapper">
+              <li class="link ">
+                <a href="#" class="link_toggler">Product <img src="./images/icon-arrow-light.svg" alt="arraow" class="link-arrow"></a>
+                <ul class="link__dropdown">
+                  <li><a href="#">Overview</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Marketplace</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Integrations</a></li>
+                </ul>
+              </li>
+              <li class="link">
+                <a href="#" class="link__toggler">Company <img src="./images/icon-arrow-light.svg" alt="arraow"class="link-arrow"></a>
+                <ul class="link__dropdown">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </li>
+              <li class="link">
+                <a href="#" class="link__toggler">Connect<img src="./images/icon-arrow-light.svg" alt="arraow" class="link-arrow"></a>
+                <ul class="link__dropdown">
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="hamburger">
+              <div class="hamburger__toggler">
+                <img src="./images/icon-hamburger.svg" alt="hamburger" class="toggler__bg">
+                <input type="checkbox" name="" id="hamburger_toggler">
+              </div>
+              <ul class="hamburger__dropdown">
+                <li class="link ">
+                  <a href="#" class="link_toggler">Product <img src="./images/icon-arrow-down.svg" alt="arraow" class="link-arrow"></a>
+                  <ul class="link__dropdown">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Integrations</a></li>
+                  </ul>
+                </li>
+                <li class="link">
+                  <a href="#" class="link__toggler">Company <img src="./images/icon-arrow-down.svg" alt="arraow"class="link-arrow"></a>
+                  <ul class="link__dropdown">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </li>
+                <li class="link">
+                  <a href="#" class="link__toggler">Connect<img src="./images/icon-arrow-down.svg" alt="arraow" class="link-arrow"></a>
+                  <ul class="link__dropdown">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="navbar__right">
+            <button class="btn btn--primary">Login</button> 
+            <button class="btn btn--secondary">Sign Up</button>
+          </div>
+        </nav>
+        <section class="hero-section">
+            <h1 class="hero__section-title">A modern publishing platform</h1>
+            <p class="hero__quotes">Grow your audience and build your online brand</p>
+            <div class="hero__buttons">
+              <button class="btn--primary">Start for Free</button>
+              <button class="btn btn--secondary">Learn More</button>
+            </div>
+        </section>
+      </div>
+    </header>
+  </div>
+  </header>
+  
+  <main class="main">
+    <section class="section">
+      <div class="container container--left">
+        <h2 class="section__title">Designed for the future</h2>
+        <div class="section__content">
+          <div class="content">
+            <h3 class="content__title">Introducing an extensible editor</h3>
+            <p class="content__paragraph">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+              The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+              videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+              change the looks of a blog.
+            </p>
+          </div>
+          <div class="content">
+            <h3 class="content__title">Robust content management</h3>
+            <p class="content__paragraph">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+              by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+            </p>
+          </div>
+        </div>
+        <div class="section__ilustration">
+          <picture>
+            <source media="(min-width : 60em)" srcset="./images/illustration-editor-desktop.svg">
+            <img src="./images/illustration-editor-mobile.svg" alt="editor ilustration">
+          </picture>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="cotainer container--center">
+         <div class="section__ilustration">
+            <img src="./images/illustration-phones.svg" alt="phones">
+         </div>
+         <div class="section__content">
+            <div class="content">
+              <h2 class="content__title">State of the Art Infrastructure</h2>
+              <P class="content__paragraph">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+                This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+              </P>
+            </div>
+         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container container--left">
+        <div class="section__content">
+          <div class="content">
+            <h3 class="content__title">Free, open, simple</h3>
+            <p class="content__paragraph">Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+              features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+              and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+            </p>
+          </div>
+          <div class="content">
+            <h3 class="content__title">Powerful tooling</h3>
+            <p class="content__paragraph">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+              capable of producing even the most complicated sites.
+            </p>
+          </div>
+        </div>
+        <div class="section__ilustration">
+          <picture>
+            <source media="(min-width : 60em)" srcset="./images/illustration-laptop-desktop.svg">
+            <img src="./images/illustration-laptop-mobile.svg" alt="editor ilustration">
+          </picture>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container container--center">
+      <img src="" alt="" class="logo">
+      <nav class="navbar">
+        <div class="links-group">
+          <h4 class="links-group__title">Product</h4>
+          <ul class="links-group__content">
+            <li><a href="">Overview</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Marketplace</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Integrations</a></li>
+          </ul>
+        </div>
+        <div class="links-group">
+          <h4 class="links-group__title">Company</h4>
+          <ul class="links-group__content">
+            <li><a href="">About</a></li>
+            <li><a href="">Team</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Careers</a></li>
+          </ul>
+        </div>
+        <div class="links-group">
+          <h4 class="links-group__title">Connect</h4>
+          <ul class="links-group__content">
+            <li><a href="">Contact</a></li>
+            <li><a href="">Newsletter</a></li>
+            <li><a href="">LinkedIn</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
