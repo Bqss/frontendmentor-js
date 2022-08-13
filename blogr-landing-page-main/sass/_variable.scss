@@ -1,0 +1,42 @@
+// primary
+
+$Lightred: hsl(356, 100%, 66%);
+$Verylightred: hsl(355, 100%, 74%);
+$Verydarkblue: hsl(208, 49%, 24%);
+
+// neutral
+$White: hsl(0, 0%, 100%);
+$Grayishblue: hsl(240, 2%, 79%);
+$Verydarkgrayishblue: hsl(207, 13%, 34%);
+$Verydarkblackblue: rgb(37, 37, 45);
+
+// gradient
+$intro-bg: hsl(13, 100%, 72%), hsl(353, 100%, 62%);
+$phone-bg : hsl(237, 17%, 21%) ,  hsl(237, 23%, 32%);
+
+// font size
+
+$fs-sm: clamp(0.6rem, 0.27vw + 0.53rem, 0.75rem);
+$fs-base: clamp(0.75rem, 0.45vw + 0.64rem, 1rem);
+$fs-md: clamp(0.94rem, 0.72vw + 0.76rem, 1.33rem);
+$fs-lg: clamp(1.17rem, 1.1vw + 0.9rem, 1.78rem);
+$fs-xl: clamp(1.46rem, 1.64vw + 1.05rem, 2.37rem);
+$fs-xxl: clamp(1.83rem, 2.41vw + 1.23rem, 3.16rem);
+$fs-xxxl: clamp(2.29rem, 3.49vw + 1.42rem, 4.21rem);
+
+// font family
+$overpass: "Overpass", sans-serif;
+$ubuntu: "Ubuntu", sans-serif;
+
+@keyframes slide-to-bottom {
+    0%{
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top ;
+    }
+    100%{
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
