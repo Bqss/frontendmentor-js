@@ -43,14 +43,8 @@ $positions: relative absolute;
 //   }
 // }
 
-@mixin fluid-type($propertyName, $min-vw, $max-vw, $min-value, $max-value) {
-  $factor: calc(1 / ($max-vw - $min-vw)) * calc($max-value - $min-value);
-  $calc-value: unquote(
-    "#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }"
-  );
-  #{$propertyName}: clamp(
-    #{if($min-value > $max-value, $max-value, $min-value)},
-    #{$calc-value},
-    #{if($min-value > $max-value, $min-value, $max-value)}
-  );
+@mixin fluid-type($propertyName ,$min-vw, $max-vw, $min-value, $max-value) {
+	$factor: calc(1 / ($max-vw - $min-vw)) * calc($max-value - $min-value);
+	$calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
+	 #{$propertyName} : clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
 }

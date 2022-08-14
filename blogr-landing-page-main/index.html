@@ -9,9 +9,10 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <script src="./js/script.js" defer></script>
+    
     <title>Frontend Mentor | [Blogr]</title>
     <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./js/script.js" defer></script>  
   </head>
   <body>
     <div class="wrapper">
@@ -81,14 +82,14 @@
                     alt="hamburger"
                     class="hamburger__bg"
                   />
-                  <input type="checkbox" name="" id="hamburger_toggler" class="hamburger__toggler absolute" />
+                  <input type="checkbox" name="" id="hamburger__toggler" class="hamburger__toggler absolute" />
                 </div>
                 <ul class="hamburger__dropdown">
                   <li class="menu">
-                    <a href="#" class="menu_toggler"
+                    <a href="#" class="menu__toggler"
                       >Product
                       <img
-                        src="./images/icon-arrow-down.svg"
+                        src="./images/icon-arrow-dark.svg"
                         alt="arraow"
                         class="menu__arrow"
                     /></a>
@@ -104,7 +105,7 @@
                     <a href="#" class="menu__toggler"
                       >Company
                       <img
-                        src="./images/icon-arrow-down.svg"
+                        src="./images/icon-arrow-dark.svg"
                         alt="arraow"
                         class="menu__arrow"
                     /></a>
@@ -118,7 +119,7 @@
                   <li class="menu">
                     <a href="#" class="menu__toggler"
                       >Connect<img
-                        src="./images/icon-arrow-down.svg"
+                        src="./images/icon-arrow-dark.svg"
                         alt="arraow"
                         class="menu__arrow"
                     /></a>
@@ -128,6 +129,10 @@
                       <li><a href="#">LinkedIn</a></li>
                     </ul>
                   </li>
+                  <div class="button-wrapper">
+                    <button class="btn btn--secondary">Login</button>
+                    <button class="btn btn--primary">Sign Up</button>
+                  </div>
                 </ul>
               </div>
             </div>
@@ -137,9 +142,9 @@
             <p class="hero__quotes">
               Grow your audience and build your online brand
             </p>
-            <div class="hero__buttons">
+            <div class="hero__buttons flex">
               <button class="btn btn--primary">Start for Free</button>
-              <button class="btn btn--secondary">Learn More</button>
+              <button class="btn btn--secondary btn--secondary--border">Learn More</button>
             </div>
           </section>
         </div>
@@ -173,10 +178,10 @@
                   </p>
                 </div>
               </div>
-              <div class="section__ilustration section__ilustration--big">
+              <div class="section__ilustration ">
                 <picture>
                   <source
-                    media="(min-width : 60em)"
+                    media="(min-width : 900px)"
                     srcset="./images/illustration-editor-desktop.svg"
                   />
                   <img
@@ -236,7 +241,7 @@
               <div class="section__ilustration">
                 <picture>
                   <source
-                    media="(min-width : 60em)"
+                    media="(min-width : 900px)"
                     srcset="./images/illustration-laptop-desktop.svg"
                   />
                   <img

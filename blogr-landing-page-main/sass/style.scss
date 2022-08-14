@@ -31,21 +31,36 @@ img {
 }
 .btn {
   font: 500 1em "Ubuntu";
-  padding: 1.1em 2.5em;
-  transition: background color 0.3s;
+  padding: 1em 2.5em;
+  transition: all 0.3s;
   border-radius: 2em;
   border: none;
+
+  @include fluid-type(font-size , 80rem , 144rem , 1.4rem , 1.6rem);
+
   &:hover {
     cursor: pointer;
   }
   &--primary {
     background-color: white;
     color: $Lightred;
+    &:hover{
+      background-color: #ff7b86;
+      color: white;
+    }
   }
   &--secondary {
     background-color: transparent;
     color: white;
+    &:hover{
+      background-color: white;
+      color: $Lightred;
+    }
+    &--border{
+      border: 1px solid white;
+    }
   }
+  
 }
 
 body {
@@ -56,25 +71,27 @@ body {
 
 }
 .container {
+  
   &--center {
-    width: min(111.2rem, 90%);
+    width: min(111.2rem , 90%);
     margin: 0 auto;
     font-weight: 500;
   }
   &--right {
-    max-width: 127.5rem;
+    max-width: min(127.5rem, 90%);
     margin-left: auto;
   }
   &--left {
-    max-width: 127.5rem;
+    max-width: min(127.5rem,90%);
     margin-right: auto;
+  }
+  @media(max-width: 900px ){
+    margin: 0 auto;
   }
 }
 
 .header {
-  background: url("./../images/bg-pattern-intro-desktop.svg") top 52% right 75%
-      no-repeat,
-    linear-gradient(to right, $intro-bg);
+  background: url("./../images/bg-pattern-intro-desktop.svg") top 52% right 75% no-repeat, linear-gradient(to right, $intro-bg);
   background-size: 220%, auto;
   height: 60rem;
   font-family: $ubuntu;
@@ -92,6 +109,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-top: 6rem;
+  position: relative;
 
   &__left {
     align-items: center;
@@ -103,7 +121,7 @@ body {
       display,
       none,
       (
-        80rem: flex,
+        59em: flex,
       )
     );
   }
@@ -115,12 +133,24 @@ body {
     }
     &__toggler {
       &--active {
+        &::after{
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: calc(100% - 1.8rem);
+          height: 2px;
+          background-color: white;
+        }
         .menu__arrow {
           transform: rotate(180deg);
         }
       }
     }
+
+    
     &__dropdown {
+
       display: none;
       flex-direction: column;
       position: absolute;
@@ -133,43 +163,87 @@ body {
       gap: 2rem;
       box-shadow: 3px 6px 1em rgba(255, 38, 0, 0.377);
 
+      a{
+        display: block;
+        transition: .2s;
+        margin: 0 auto;
+        &:hover{
+          color: $Grayishblue;
+        }
+      }
+
       &--active {
         display: flex;
         animation: slide-to-bottom 0.3s ease-in-out;
       }
+      
+    }
+    @media (max-width : 900px){
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        &__dropdown{
+          position: static;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          box-shadow: none;
+          background-color: #efeff1;
+        }
     }
   }
   .button-wrapper {
-    @include minQuery(
-      display,
-      none,
-      (
-        80rem: block,
-      )
-    );
+    @include minQuery(display,none,(54em: block));
   }
   .hamburger {
-    @include minQuery(
-      display,
-      block,
-      (
-        80rem: none,
-      )
-    );
+    @include minQuery(display,block,(54em: none));
     &__toggler {
       top: 0;
       left: 0;
       opacity: 0;
       width: 33px;
-      height: 18px;
+      height: 33px;
       &:hover {
         cursor: pointer;
       }
     }
+   
     &__dropdown {
       display: none;
-      &--expansed {
+      position: absolute;
+      top: 12rem;
+      right: 0;
+      width: 100%;
+      background-color: white ;
+      color: black;
+      z-index: 2;
+      flex-direction: column;
+      align-items: center;
+      padding: 3.5rem 2.5rem;
+      border-radius: .3em;
+      box-shadow: 3px 3px 3em rgba(0, 0, 0, 0.233);
+      gap: 3rem;
+      &--active {
         display: flex;
+        flex-direction: column;
+        transition: .3s;
+      }
+      .button-wrapper{
+        border-top: 1px solid #efeff1;
+        padding: 2rem;
+        display: flex;
+        gap: .5rem;
+        flex-direction: column;
+        .btn--secondary{
+          color: black;
+          
+        }
+        .btn--primary{
+          background: linear-gradient(to right , $intro-bg);
+          color: white;
+        }
       }
     }
   }
@@ -185,6 +259,12 @@ body {
   }
   &__quotes {
     margin-bottom: 5rem;
+  }
+  @media(max-width : 900px){
+    text-align: center;
+  }
+  &__buttons{
+    gap: 2rem;
   }
 }
 
@@ -203,33 +283,66 @@ body {
   &__content {
     align-items: center;
     justify-content: space-between;
+    @include fluid-type(gap , 80rem , 144rem , 1rem , 8rem);
   }
   &__ilustration {
-    flex: 0 1 50%;
-    position: relative;
+    flex: 0 0 54%;
     min-height:88.2rem;
+    position: relative;
+
     .bg {
       position: absolute;
-      width: max-content;
       max-width: unset;
+      width: max-content;
+      top : 50%;
+      transform: translateY(-50%);
+      
+      @include fluid-type(width , 80rem , 144rem , 60rem , 96rem);
       &--left{
-        top: 4rem;
-        left: -27rem;
+        right: 0;
+      }
+    }
+  }
+
+  @media (max-width : 900px){
+    text-align: center;
+    margin-block: 10.8rem;
+    &__content{
+      flex-direction: column-reverse;
+    }
+    &__title{
+      position: static;
+      transform: translateX(0);
+      
+      
+    }
+    &__ilustration{
+      min-height: unset;
+      width: 120%;
+      margin-block: 5.5rem;
+      .bg{
+        transform: translateY(0);
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+        
       }
     }
   }
 
   .content-wrapper {
-    flex: 0 1 53.5rem;
+    flex: 0 1 47%;
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    @include minQuery(gap , 5.5rem , (901px : 8rem));
   }
   .content {
     
     &__paragraph {
       line-height: 1.7;
       color: $Verydarkgrayishblue;
+      @include  fluid-type(font-size , 900px , 1440px , 15px , 16px );
+     
     }
     &__title {
       font-size: $fs-xl;
@@ -241,6 +354,7 @@ body {
     background-size: 70% , auto;
     background-position:  top 80% right 148% ;
     margin-block: 0;
+    border-radius: 0 10rem 0 10rem;
     
     &__content{
       gap: 3rem;
@@ -251,8 +365,11 @@ body {
         flex: 50%;
         .bg{
             position: absolute;
-            max-width: 53rem;
-            top: -6rem;
+            max-width: unset;
+            @include fluid-type(width , 900px,1440px, 450px ,552px);
+            top: 50%;
+            transform: translateY(-45%);
+            right: 0;
         }
     }
     .content-wrapper{
@@ -269,6 +386,27 @@ body {
             color: $Grayishblue;
         }
     }
+    @media(max-width : 900px){
+      margin-top: 27.5rem;
+      background-size: 63rem , auto;
+      background-position: top -25rem left 50% , center ;
+      &__content{
+        flex-direction: column;
+        padding-bottom: 12rem;
+      }
+      &__ilustration{
+        min-height: 21rem;
+        .bg{
+          top: -100%;
+
+          left: 50%;
+          width: min(450px , 120%);
+          transform: translateX(-50%);
+        }
+      }
+      
+      
+    }
   }
 }
 
@@ -276,14 +414,11 @@ body {
   padding: 8rem 0;
   background-color: $Verydarkblackblue;
   border-top-right-radius: 7em;
-  &__logo{
-    flex: 1 0 28.6rem;
-  }
+  .container{gap:  18.5rem;}
   &__navbar{
-    flex: 75%;
+    width: 100%;
     grid-template-columns: repeat( auto-fit ,minmax(15rem , 1fr));
     row-gap: 10rem;
-
   }
   .links-group{
     
@@ -300,6 +435,14 @@ body {
         
         gap: 2rem;
         color: $Grayishblue;
+    }
+  }
+  @media(max-width : 475px ){
+    
+    .container{
+      text-align: center;
+      flex-direction: column;
+      gap: 8.5rem;
     }
   }
 }
